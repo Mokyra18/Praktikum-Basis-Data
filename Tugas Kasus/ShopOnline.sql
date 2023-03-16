@@ -1,3 +1,4 @@
+```
 CREATE TABLE `akun` (
   `id_akun` integer PRIMARY KEY,
   `nama` varchar(255),
@@ -29,3 +30,4 @@ ALTER TABLE `transaksi` ADD FOREIGN KEY (`id_pembayaran`) REFERENCES `pembayaran
 ALTER TABLE `produk` ADD FOREIGN KEY (`id_produk`) REFERENCES `transaksi` (`id_produk`);
 
 ALTER TABLE `akun` ADD FOREIGN KEY (`id_akun`) REFERENCES `produk` (`id_akun`);
+```
