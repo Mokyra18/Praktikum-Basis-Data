@@ -1,16 +1,24 @@
-```
-CREATE TABLE `akun` (
+CREATE TABLE `pengguna` (
   `id_akun` integer PRIMARY KEY,
-  `nama` varchar(255),
-  `alamat` varchar(255)
+  `username_akun` varchar(255),
+  `nama_lengkap` varchar(255),
+  `tanggal_lahir` varchar(255),
+  `alamat` varchar(255),
+  `no_telepon` varchar(255),
+  `email` varchar(255),
+  `jenis_kelamin` varchar(255),
+  `prefensi_pembayaran` varchar(255)
 );
 
 CREATE TABLE `produk` (
   `id_produk` integer PRIMARY KEY,
   `id_akun` integer,
-  `nama` varchar(255),
   `harga` integer,
-  `stok` integer
+  `kategori_produk` varchar(255),
+  `nama_produk` varchar(255),
+  `deskripsi_produk` Text(255),
+  `gambar_produk` varchar(255),
+  `katergori_produk` varchar(255)
 );
 
 CREATE TABLE `transaksi` (
@@ -24,10 +32,3 @@ CREATE TABLE `pembayaran` (
   `id_pembayaran` integer PRIMARY KEY,
   `total_harga` integer
 );
-
-ALTER TABLE `transaksi` ADD FOREIGN KEY (`id_pembayaran`) REFERENCES `pembayaran` (`id_pembayaran`);
-
-ALTER TABLE `produk` ADD FOREIGN KEY (`id_produk`) REFERENCES `transaksi` (`id_produk`);
-
-ALTER TABLE `akun` ADD FOREIGN KEY (`id_akun`) REFERENCES `produk` (`id_akun`);
-```
